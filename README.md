@@ -1,275 +1,340 @@
-::: {align="center"}
-# 📱 Mobile Data Web Scraping & Price Prediction
+# 📱 Mobile Data Analysis & Brand Prediction Using Machine Learning
 
-### Turning mobile phone listing data into data-driven price insights with Python and Machine Learning
-
-```{=html}
-<p>
-```
-`<img src="https://img.shields.io/badge/Project-Data%20Science-6C63FF?style=for-the-badge" alt="Data Science Project" />`{=html}
-`<img src="https://img.shields.io/badge/Python-Analysis-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />`{=html}
-`<img src="https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Notebook" />`{=html}
-`<img src="https://img.shields.io/badge/Machine%20Learning-Price%20Prediction-0A7B65?style=for-the-badge" alt="Machine Learning" />`{=html}
-```{=html}
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
+  <img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-learn"/>
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL"/>
+  <img src="https://img.shields.io/badge/Web_Scraping-00897B?style=for-the-badge" alt="Web Scraping"/>
 </p>
+
+<p align="center">
+  <b>An End-to-End Data Science Capstone Project</b><br/>
+  Turning raw smartphone product data into actionable business insights through web scraping, data analysis, clustering, and machine learning.
+</p>
+
+---
+
+## 📌 Project Overview
+
+This project explores the Indian smartphone market by collecting product information from Flipkart and transforming raw web data into meaningful insights using Python, SQL, exploratory data analysis (EDA), and machine learning.
+
+The project follows a complete data science workflow, starting with automated data collection and ending with trained-model predictions and business recommendations.
+
+The main objective is to understand smartphone pricing patterns, brand distribution, customer ratings, and product specifications while building machine learning models that can segment mobile phones and predict their brands.
+
+🔗 **GitHub Repository:** [Web-Scraping-Mobile-Data-Prediction](https://github.com/ParthasarathiAnalytics/Web-Scraping-Mobile-Data-Prediction)
+
+## 🎯 Business Objectives
+
+- Automate smartphone data collection using web scraping.
+- Clean and transform raw product data into an analysis-ready dataset.
+- Identify brand distribution, price ranges, ratings, and specification trends.
+- Analyze relationships between smartphone prices and hardware features.
+- Segment smartphones into meaningful market categories using unsupervised learning.
+- Compare classification algorithms to predict smartphone brands.
+- Tune and save the best-performing model for predictions on new data.
+- Translate analytical findings into recommendations for consumers and e-commerce businesses.
+
+## 🛠️ Technology Stack
+
+| Technology | Application |
+|---|---|
+| Python | Data processing and machine learning |
+| Selenium | Browser automation and dynamic webpage loading |
+| BeautifulSoup | HTML parsing and product information extraction |
+| Pandas & NumPy | Data cleaning, transformation, and analysis |
+| Matplotlib & Seaborn | Statistical visualizations and correlation heatmaps |
+| SQL & SQLAlchemy | Relational database storage and data retrieval |
+| Scikit-learn | Preprocessing, clustering, classification, and evaluation |
+| XGBoost | Gradient-boosting classification |
+| Pickle | Saving the trained model for reuse |
+| Jupyter Notebook | Interactive analysis and experimentation |
+
+## 🔄 End-to-End Project Workflow
+
+```mermaid
+flowchart TD
+    A[Flipkart Product Listings] --> B[Web Scraping]
+    B --> C[Raw Dataset: 956 Rows]
+    C --> D[Data Cleaning and Feature Engineering]
+    D --> E[Clean Dataset: 851 Rows]
+    E --> F[Exploratory Data Analysis]
+    E --> G[SQL Database Integration]
+    F --> H[Unsupervised Learning]
+    F --> I[Supervised Learning]
+    H --> J[Smartphone Market Segmentation]
+    I --> K[Model Comparison and Tuning]
+    K --> L[Best Model: Random Forest]
+    L --> M[Save Model and Predict New Data]
+    J --> N[Business Insights]
+    M --> N
 ```
-**[📂 View
-Repository](https://github.com/ParthasarathiAnalytics/Web-Scraping-Mobile-Data-Prediction)**
-  •   **[👨‍💻 View
-Portfolio](https://parthasarathi-analytics.vercel.app/)**
-:::✨ Project at a Glance
-This capstone project explores a complete data science workflow for
-mobile phone listings: collecting data through web scraping, preparing
-it for analysis, exploring patterns in product attributes, and applying
-machine learning techniques to estimate mobile phone prices.
-Core idea: Use product listing data to investigate how mobile
-phone attributes relate to price and build a data-driven prediction
-workflow.
 
-<table>
-<tr>
-<td width="50%">
-<h3>
-🎯 Goal
-</h3>
-Explore mobile phone listing data and develop a price-prediction model.
-</td>
-<td width="50%">
-<h3>
-🧰 Approach
-</h3>
-Web scraping → data preparation → EDA → model training → evaluation.
-</td>
-</tr>
-<tr>
-<td width="50%">
-<h3>
-📓 Main Deliverable
-</h3>
-Jupyter Notebook containing the capstone workflow.
-</td>
-<td width="50%">
-<h3>
-📈 Expected Output
-</h3>
-An evaluated regression model and insights grounded in the collected
-data.
-</td>
-</tr>
-</table>
-📑 Table of Contents
-- Business Problem
-- Project Objectives
-- Technology Stack
-- Project Files
-- Project Workflow
-- Getting Started
-- Model Evaluation
-- Responsible Web Scraping
-- Limitations
-- Future Enhancements
-- Author
-💡 Business Problem
-Mobile phone prices vary based on product specifications, brand,
-availability, and seller offers. Comparing listings can be difficult
-when product information is spread across multiple pages or presented in
-inconsistent formats.
+## 1. 🕷️ Web Scraping and Data Collection
 
-This project investigates whether collected mobile phone listing data
-can be prepared and used to model the relationship between available
-product attributes and listed prices.
-Questions this project explores
-- What mobile phone listing information can be collected from web
-  pages?
-- What data-quality issues need to be addressed before analysis?
-- Which available product attributes appear related to price?
-- How can a machine learning regression model estimate price from
-  selected features?
-- How should model performance be evaluated?
-🎯 Project Objectives
-- 🌐 Collect mobile phone listing data using web-scraping techniques.
-- 🧹 Inspect and prepare the collected data for analysis.
-- 🔎 Perform exploratory data analysis (EDA).
-- 🧩 Select relevant features for price prediction.
-- 🤖 Train a machine learning regression model.
-- 📏 Evaluate model performance using appropriate metrics.
-- 📝 Document the process and communicate the project through
-  supporting materials.
-🛠️ Technology Stack
-  Technology                          Role in the project
-  Python                          Data processing and model
-                                      development
+Smartphone product information was collected from Flipkart using Selenium and BeautifulSoup.
 
-  Jupyter Notebook                Interactive coding, analysis, and
-                                      experimentation
+### Information collected
 
-  Pandas                          Tabular data preparation and
-                                      analysis
+- Product title and brand
+- Price and customer rating
+- RAM and internal storage (ROM)
+- Battery capacity
+- Processor information
+- Front and rear camera specifications
+- Display size and display type
+- Warranty and product colour
 
-  NumPy                           Numerical operations
+The scraping workflow included browser setup, pagination, waiting for webpage elements, extracting product specifications, and exporting the collected data to CSV.
 
-  Web-scraping libraries          Collecting listing data, depending
-                                      on the notebook implementation
+**Initial dataset:** 956 rows and 9 columns, as documented in the project report.
 
-  Matplotlib / Seaborn            Data visualization, if used
+## 2. 🧹 Data Cleaning and Feature Engineering
 
-  Scikit-learn                    Model training and evaluation, if
-                                  used
-Confirm the exact libraries and versions from the notebook's import
-cells before documenting them as final dependencies.
-🗂️ Project Files
-  File                                                 Purpose
-  MOBILE CAT PERDICT USING ML (CAPSTONE) (1).ipynb   Main notebook for the mobile price
-                                                       prediction workflow
+The raw dataset required preprocessing before it could be used for analytics and machine learning.
 
-  CAPSTONE PROJECT bY SARATHI.docx                   Project documentation
+### Data preparation activities
 
-  Cap Stone Project Description.pdf                  Capstone project description
+- Renamed columns for consistency and readability.
+- Extracted brand names and processor brands from text fields.
+- Separated RAM and ROM values.
+- Split combined front and rear camera specifications.
+- Removed currency symbols, commas, units, and unwanted strings.
+- Converted relevant fields into numeric formats.
+- Handled missing ratings and product specifications.
+- Removed redundant columns and inconsistent RAM measurements.
+- Prepared categorical and numerical features for modeling.
 
-  capstone ppt (wecompress.com).pptx                 Project presentation
-  README.md                                          Project overview and instructions
-🔄 Project Workflow
-┌──────────────────────┐
-│  1. Web Data Scraping │
-│  Collect listings     │
-└──────────┬───────────┘
-           ▼
-┌──────────────────────┐
-│  2. Data Preparation  │
-│  Inspect and clean    │
-└──────────┬───────────┘
-           ▼
-┌──────────────────────┐
-│  3. Exploratory Data  │
-│  Analysis (EDA)       │
-└──────────┬───────────┘
-           ▼
-┌──────────────────────┐
-│  4. Feature Selection │
-│  Prepare model inputs │
-└──────────┬───────────┘
-           ▼
-┌──────────────────────┐
-│  5. Model Training    │
-│  Fit a regression     │
-│  model                │
-└──────────┬───────────┘
-           ▼
-┌──────────────────────┐
-│  6. Model Evaluation  │
-│  Measure performance │
-└──────────────────────┘
-Workflow details
-1. Web scraping
-Collect mobile phone listing information from the target website.
-Document the source, fields, and scraping approach used in the notebook.
+**Final dataset:** 851 rows and 14 columns.
 
-2. Data preparation
-Inspect missing values, duplicates, inconsistent formats, and data
-types. Apply cleaning steps based on the actual dataset.
+### Final analytical features
 
-3. Exploratory data analysis
-Review price distributions and investigate relationships between price
-and the product attributes available in the data.
+`Price`, `Rating`, `RAM`, `ROM`, `Battery`, `Processor`, `Processor_Brand`, `Brand`, `Color`, `Front Camera`, `Back Camera`, `Display Size`, `Display Type`, and `Warranty`.
 
-4. Feature preparation
-Choose input features and prepare categorical or numeric variables as
-required by the selected model.
+## 3. 📊 Exploratory Data Analysis (EDA)
 
-5. Model training
-Train a regression algorithm using an appropriate training and testing
-strategy.
+EDA was performed to understand smartphone market trends, feature relationships, and pricing behavior.
 
-6. Evaluation
-Compare predicted and actual prices and assess performance with suitable
-regression metrics.
-🚀 Getting Started
-Prerequisites
-- Python 3.x
-- Jupyter Notebook or JupyterLab
-- Required packages used by the notebook
-- Any dataset files or scraping dependencies required by the project
-1. Clone the repository
+### Key analytical activities
+
+- Numerical feature correlation heatmap
+- Brand-wise product count analysis
+- Smartphone price distribution and outlier analysis
+- Brand-wise rating comparison
+- Analysis of RAM, storage, battery, and processor characteristics
+- Visualization of pricing patterns across smartphone categories
+
+### Key findings documented in the project
+
+- Many products in the dataset fall within the ₹10,000–₹20,000 price range.
+- Smartphones below ₹8,000 form a budget segment.
+- Products priced above ₹40,000 represent the premium segment.
+- RAM, storage, processor capability, and battery capacity help differentiate smartphone categories.
+- The report identifies Google, Realme, Samsung, and Redmi among the brands frequently represented in the dataset.
+
+*These findings describe the collected dataset and should not be interpreted as a complete measurement of the entire smartphone market.*
+
+## 4. 🗄️ SQL Database Integration
+
+After data cleaning, the processed dataset was transferred to a relational database using SQLAlchemy.
+
+### Workflow
+
+1. Load the cleaned dataset into Pandas.
+2. Configure a database connection.
+3. Store the processed data in a relational table.
+4. Retrieve stored records using SQL queries.
+5. Load the retrieved data back into Python for further analysis.
+
+This integration demonstrates how Python-based analytics can work alongside relational database systems to support data management and reusable analytical workflows.
+
+## 5. 🔍 Unsupervised Learning: Smartphone Segmentation
+
+Two clustering algorithms were implemented and compared to discover groups of smartphones with similar characteristics.
+
+| Algorithm | Silhouette Score |
+|---|---:|
+| K-Means | 0.460 |
+| Hierarchical Clustering | 0.461 |
+| Tuned Hierarchical Clustering | 0.647 |
+
+The tuned hierarchical clustering model achieved a silhouette score of **0.647**, with the selected cluster count set to 14 in the project report.
+
+### Business-oriented segments
+
+| Segment | Approximate price range | Typical positioning |
+|---|---:|---|
+| Budget | Below ₹8,000 | Entry-level and affordability-focused |
+| Midrange | ₹15,000–₹20,000 | Balanced features and pricing |
+| Gaming / Performance | ₹20,000–₹32,000 | Higher RAM and performance-oriented hardware |
+| Premium | Above ₹40,000 | Flagship specifications and premium positioning |
+
+These segments support product comparison, inventory planning, and targeted marketing.
+
+## 6. 🤖 Supervised Learning: Smartphone Brand Prediction
+
+A multi-class classification approach was developed to predict a smartphone's brand using its product specifications.
+
+### Model development workflow
+
+- Feature selection and target definition
+- Encoding categorical variables
+- Filtering very rare target classes
+- Train-test splitting
+- Feature scaling using StandardScaler
+- Cross-validation using StratifiedKFold
+- Training and evaluating multiple classification algorithms
+- Hyperparameter tuning
+- Comparing actual and predicted labels
+- Saving the best-performing model for future predictions
+
+### Classification algorithms compared
+
+- Logistic Regression
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- Decision Tree
+- Random Forest
+- XGBoost
+
+### 📈 Model Performance Comparison
+
+The following test accuracies are taken from the project report.
+
+| Model | Training Accuracy | Test Accuracy |
+|---|---:|---:|
+| Logistic Regression | 83.65% | 75.88% |
+| SVM | 68.04% | 66.47% |
+| KNN | 82.62% | 71.18% |
+| Decision Tree | 100.00% | 90.00% |
+| Random Forest | 100.00% | **94.71%** |
+| XGBoost | 100.00% | 92.94% |
+
+### Best-performing model: Random Forest
+
+The Random Forest classifier achieved the highest reported test accuracy of approximately **94.71%** before tuning.
+
+The project report further documents hyperparameter tuning that improved accuracy from approximately 92% to 94%.
+
+The trained Random Forest model was saved using Pickle and used to generate predictions for new smartphone data without retraining the model.
+
+> **Important:** The reported accuracy measures how well the model predicts brand labels on the evaluated test dataset. It does not represent smartphone price prediction accuracy or guarantee the same performance on future data.
+
+## 7. 💡 Business Insights and Recommendations
+
+### For e-commerce businesses
+
+- Prioritize analysis of midrange smartphone inventory and demand.
+- Compare product prices against RAM, storage, battery, and processor specifications.
+- Use brand-wise product counts and ratings to guide merchandising decisions.
+- Create targeted promotions for budget, performance, and premium product categories.
+- Refresh scraped data periodically to account for changing prices and product availability.
+
+### For consumers
+
+- Compare specifications alongside price rather than relying on brand alone.
+- Evaluate battery capacity, RAM, processor performance, camera features, and user ratings against individual needs.
+- Compare similar models across brands before making a purchase.
+- Consider total value for money when choosing between midrange and premium devices.
+
+### Future enhancements
+
+- Incorporate customer review sentiment analysis.
+- Schedule regular data collection and dataset refreshes.
+- Add price prediction as a separate regression problem.
+- Develop a smartphone recommendation system based on budget and preferred specifications.
+- Deploy the trained classification model through a Streamlit or Flask application.
+- Monitor model performance on newly collected data.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.10 or a compatible Python environment
+- Google Chrome
+- Jupyter Notebook
+- A supported relational database if you want to reproduce the SQL integration
+- The project source files and required datasets
+
+### Installation
+
+Clone the repository:
+
+```bash
 git clone https://github.com/ParthasarathiAnalytics/Web-Scraping-Mobile-Data-Prediction.git
+```
+
+Navigate to the project directory:
+
+```bash
 cd Web-Scraping-Mobile-Data-Prediction
-2. Create a virtual environment (recommended)
-Windows
-python -m venv .venv
-.venv\Scripts\activate
-macOS / Linux
-python3 -m venv .venv
-source .venv/bin/activate
-3. Install dependencies
-If the repository contains a requirements.txt file:
-pip install -r requirements.txt
-If it does not, install the packages listed in the notebook's import
-cells. You can install Jupyter with:
-pip install notebook
-4. Launch Jupyter Notebook
+```
+
+Install the principal Python dependencies:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn selenium beautifulsoup4 webdriver-manager sqlalchemy pymysql xgboost jupyter
+```
+
+Launch Jupyter Notebook:
+
+```bash
 jupyter notebook
-Open MOBILE CAT PERDICT USING ML (CAPSTONE) (1).ipynb and run the
-cells in order. Make sure the expected data files and scraping
-prerequisites are available.
-📊 Model Evaluation
-Use the notebook as the source of truth for the final model and results.
-For a regression task, commonly used evaluation metrics include:
+```
 
-  Metric     What it indicates
-  MAE    Average absolute prediction error
-  MSE    Average squared prediction error
-  RMSE   Prediction error expressed in the target's units
-  R²     Proportion of target variance explained by the model
+Open the relevant notebook or Python script and execute the workflow in sequence.
 
-Only report metrics that were actually calculated by the project. The
-dataset size, chosen algorithm, train/test split, and final scores
-should be added after checking the completed notebook.
-Results note: Verified model scores and dataset statistics are not
-stated here because they have not been confirmed from the notebook
-contents.
+**Database note:** The SQL connection settings, database credentials, dataset paths, and input feature columns must match your local setup. Do not commit database passwords or other secrets to GitHub.
 
-🛡️ Responsible Web Scraping
-- Check the target website's terms of service and robots.txt.
-- Respect rate limits and avoid excessive requests.
-- Do not collect personal or sensitive information.
-- Keep source attribution and data-collection dates where appropriate.
-- Use collected information only for permitted learning and research
-  purposes.
-⚠️ Limitations
-- Web page layouts and product listings can change over time.
-- Listed prices may depend on seller, promotion, stock, and collection
-  date.
-- Missing or inconsistent product attributes can affect model quality.
-- Results depend on data quality, feature selection, and validation
-  design.
-- Predictions are estimates, not guaranteed selling prices.
-🔭 Future Enhancements
-- [ ] Add a reproducible scraping script with clear configuration and
-  error handling.
-- [ ] Document the source website and create a data dictionary.
-- [ ] Add a requirements.txt file for reproducible setup.
-- [ ] Compare multiple regression algorithms with the same validation
-  strategy.
-- [ ] Include actual-versus-predicted plots and residual analysis.
-- [ ] Save the trained model and document how to load it.
-- [ ] Build a small interactive interface for estimating prices.
-- [ ] Add verified dataset statistics, model metrics, and project
-  screenshots.
-👨‍💻 Author
-::: {align="center"}
-### Parthasarathi A
+**Reproducibility note:** The commands above install the main libraries documented for the workflow. Exact execution steps depend on the files and database configuration included in the repository.
 
-**Data Analytics \| Data Science \| Machine Learning**
+## 📁 Project Structure
 
-[![GitHub](https://img.shields.io/badge/GitHub-ParthasarathiAnalytics-181717?style=for-the-badge&logo=github)](https://github.com/ParthasarathiAnalytics)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit%20Website-6C63FF?style=for-the-badge&logo=vercel&logoColor=white)](https://parthasarathi-analytics.vercel.app/)
-:::::: {align="center"}
-**⭐ If you find this project useful, consider starring the
-repository.**
+The repository's exact file structure should be reflected here after verification. A suggested organization for this project is:
 
-*Built as a data science capstone project for learning and
-experimentation.*
-:::Disclaimer
-This is an educational project. Data availability, scraping behavior,
-and model predictions depend on the implementation and the source data.
-Validate the notebook's results before using them in a portfolio
-presentation or business decision.
+```text
+Web-Scraping-Mobile-Data-Prediction/
+│
+├── notebooks/          # Scraping, EDA, and ML notebooks
+├── data/               # Raw and cleaned datasets
+├── models/             # Saved trained model
+├── visualizations/     # EDA and model comparison charts
+├── README.md
+└── requirements.txt
+```
+
+*This is a recommended structure, not a verified listing of the current repository files.*
+
+## 🎓 Skills Demonstrated
+
+- Python programming for data science
+- Dynamic website scraping and HTML parsing
+- Data cleaning and feature engineering
+- Exploratory data analysis and visualization
+- SQL database integration
+- Unsupervised learning and clustering evaluation
+- Multi-class classification
+- Model comparison and hyperparameter tuning
+- Model persistence and prediction on new data
+- Translating analytical results into business recommendations
+
+## 👨‍💻 Author
+
+**Parthasarathi A**
+
+Data Analytics | Data Science | Python | SQL | Machine Learning
+
+- GitHub: [@ParthasarathiAnalytics](https://github.com/ParthasarathiAnalytics)
+- Project Repository: [Web Scraping Mobile Data Prediction](https://github.com/ParthasarathiAnalytics/Web-Scraping-Mobile-Data-Prediction)
+- Portfolio: [parthasarathi-analytics.vercel.app](https://parthasarathi-analytics.vercel.app/)
+
+## 📜 Responsible Data Collection
+
+This project was developed for educational and analytical purposes. Website content, prices, and product specifications may change over time. Before collecting data, review the website's terms of service, applicable policies, and access restrictions. Use reasonable request rates and do not attempt to bypass access controls.
+
+---
+
+<p align="center">
+  <b>From Raw Data to Business Insights — An End-to-End Data Science Journey.</b>
+</p>
